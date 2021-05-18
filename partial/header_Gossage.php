@@ -33,6 +33,10 @@
 					?>
 				</ul>
 			</div>
+			<iframe style="width:700px;height:240px;"
+				onload="applyStyles(this)"
+				src="https://magix.apps-de-cours.com/server/#/chat/<?= $data["token"]?>" >
+			</iframe>
 			</div>
 		</div>
 

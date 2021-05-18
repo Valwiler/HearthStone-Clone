@@ -11,7 +11,7 @@
 	<h1>Bienvenu au Lobby </h1>
 
 	<p>Veux-tu jouer une tite game  ?</p>
-	
+	<!-- <canvas width = "800" height = "800" id="canvas" top= "0" left ="0" ></canvas> -->
 	<div class="lobby-form-frame">
 		<form action="lobby.php" method="post">
 		<?php
@@ -39,6 +39,7 @@
 		</form> 
 		
 </div>
+
 <iframe style="width:700px;height:240px;"
 		onload="applyStyles(this)"
 		src="https://magix.apps-de-cours.com/server/#/chat/<?= $data["token"]?>" >
