@@ -1,0 +1,695 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: #000000;
+
+    background-color: #a1a1a1;
+}
+
+body {
+    font-family: Verdana;
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+h1 {
+    font-size: 1.3em;
+    text-shadow: 2px 2px 5px #aaa;
+    margin-bottom: 25px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.container {
+    background-color: white;
+    width: 930px;
+    min-height: 350px;
+    margin: 5px auto;
+    border: 1px solid #6b5736;
+    padding: 15px;
+
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    box-shadow: 0 0 15px #000;
+    border-radius: 3px;
+}
+
+.header {
+    /* display: visible; */
+    width: 940px;
+    margin: auto;
+    /* margin-bottom: 5px; */
+    color: white;
+    padding: 10px;
+    /* padding-bottom: 3px; */
+    /*display: block;*/
+    /* justify-content: space-between;
+    align-content: space-between; */
+}
+
+.header #navbar {
+    background: rgb(192, 192, 192);
+    position: fixed;
+    display: none;
+    z-index: 8;
+    width: 50%;
+    height: 80px;
+    margin: auto;
+    left: 25%;
+    border: black thick double;
+    padding: 10px;
+
+}
+
+.header h2 {
+    text-indent: -1000px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    height: 55px;
+}
+
+.menu {
+    text-align: right;
+    justify-content: center;
+    align-content: center;
+    /* text-align: right; */
+}
+
+/* .header .menu ul li {
+    display: inline;
+    padding-right: 15px;
+} */
+
+.menu ul li {
+    display: inline;
+    padding-right: 15px;
+}
+
+.header .username-section {
+    align-self: left;
+    font-size: larger;
+    width: 240px;
+    font-style: italic;
+    text-align: left;
+}
+
+
+.form-label {
+    float: left;
+    width: 150px;
+}
+
+.form-input {
+    float: left;
+    width: 100px;
+}
+
+.form-separator {
+    clear: both;
+    height: 30px;
+}
+
+.loading-div button,
+.error-div button,
+.notif-div button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.error-div,
+.notif-div,
+.loading-div {
+    position: absolute;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error-div {
+    border: 3px solid red;
+    background-color: pink;
+    color: red;
+}
+
+.notif-div {
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(192, 235, 255);
+    color: rgb(0, 0, 0);
+}
+
+.loading-div {
+    border: 3px solid rgb(61, 61, 61);
+    background-color: rgb(187, 187, 187);
+    color: rgb(0, 0, 0);
+}
+
+.login-form-frame {
+    margin: 20px auto;
+    width: 400px;
+    border-radius: 3px;
+    border: 1px solid #6b5736;
+    background-color: #ddd;
+    padding: 20px;
+    background: linear-gradient(white, #d1d1d1);
+}
+
+.lobby-form-frame {
+    margin: 20px auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 3px;
+    border: 1px solid #6b5736;
+    background-color: #ddd;
+    padding: 20px;
+    justify-content: center;
+
+    background: linear-gradient(white, #d1d1d1);
+}
+
+.lobby-form-frame button {
+    box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
+    color: #333;
+    background-color: #d1d1d1;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    height: 32px;
+    padding: 4px 16px;
+    /**cursor: pointer;**/
+}
+
+button:hover {
+    background-color: #bbb;
+}
+
+.lobby-form-frame input {
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    margin: 0% 50%;
+
+}
+
+.cercle {
+    position: absolute;
+    background: lightblue;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.514) 100%);
+    animation: GradientChange 30s infinite;
+}
+
+.hand {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(175, 174, 174, 0.5);
+}
+
+.board {
+    align-content: center;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.712);
+}
+
+.info {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    position: absolute;
+    background-color: rgb(146, 146, 146);
+
+}
+
+.info div {
+    display: inline-block;
+    align-self: center;
+
+}
+
+.Hand-size-icon,
+.Deck-size-icon {
+    background-image: url('../images/Card-Backdrop.jpg');
+    height: 80px;
+    width: 50px;
+    background-size: cover;
+    position: relative;
+}
+
+.HP-icon,
+.MP-icon {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 80px;
+    width: 80px;
+
+}
+
+.text-node {
+    top: 40%;
+    text-align: center;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.card .text-node {
+    top: 50%;
+}
+
+.HP-icon .text-node,
+.MP-icon .text-node {
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 50%;
+    left: 9px;
+    z-index: 5;
+    /* text-align: center; */
+}
+
+.loading-icon {
+    background-image: url('../images/Hourglass.png');
+    height: 50px;
+    width: 30px;
+    background-size: cover;
+    animation: rotate 4s linear infinite;
+}
+
+.HP-icon:after,
+.MP-icon:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/Potion2.png");
+    background-size: contain;
+    position: relative;
+}
+
+.liquid {
+    height: 90%;
+    width: 90%;
+    transition: all 0.2s ease;
+    border-radius: 30%;
+    position: absolute;
+    left: -5px;
+}
+
+.HP-icon .liquid {
+    background: radial-gradient(circle at 100% 50%, rgba(251, 6, 70, 1) 0%, rgba(244, 162, 97, 1) 100%);
+    animation: rotate 3s linear infinite, moveup 6s linear;
+}
+
+.MP-icon .liquid {
+    background: radial-gradient(circle at 100% 50%, rgb(6, 104, 251) 0%, rgb(97, 215, 244) 100%);
+    animation: rotate 4s linear infinite, moveup 5s linear;
+}
+
+.Button-section {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Button-section button {
+    width: 90%;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 3px;
+    border: none;
+    font-weight: 700;
+}
+
+.Button-section button:hover {
+    background-color: rgb(158, 158, 158);
+}
+
+.bubble {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    opacity: 0;
+    animation: bubble-up 2s infinite ease-in;
+}
+
+.bubble:before {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 80%;
+    margin-top: 2px;
+    margin-left: 2px;
+    transform: rotateZ(-45deg);
+    border-radius: 100%;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.card {
+    transition: 1s;
+    display: none;
+    height: 120px;
+    width: 60px;
+    font-size: 1em;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    border-radius: 2px;
+    background-size: cover;
+    padding: 0.5em;
+}
+
+.cost {
+    background-image: url('../images/Coin-Backdrop.png');
+    width: 1.5em;
+    height: 1.5em;
+    left: -1em;
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-shadow: -1px -1px 0 rgb(248, 248, 248), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+}
+
+.vie {
+    background-image: url('../images/Heart-Backdrop.png');
+    width: 1.5em;
+    height: 2.5em;
+    left: -1em;
+    background-size: cover;
+    overflow: visible;
+    position: relative;
+    color: white;
+    text-shadow: -1px -1px 0 rgb(248, 248, 248), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+}
+
+.attack {
+    background-image: url('../images/Sword-Backdrop.png');
+    width: 1.5em;
+    height: 1.5em;
+    left: -1em;
+    background-size: cover;
+    overflow: visible;
+    position: relative;
+    text-shadow: -1px -1px 0 rgb(248, 248, 248), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+}
+
+.card-text {
+    top: -5%;
+    width: 100%;
+    height: auto min-content;
+    left: 5%;
+    background-size: cover;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.616);
+    font: 7px bold black;
+}
+
+.Player-Container .card:hover {
+    animation: none;
+    transform: scale(2.5) translateY(-50%);
+    cursor: pointer;
+    z-index: 8;
+}
+
+.card:hover {
+    animation: none;
+    transform: scale(2.5);
+    cursor: pointer;
+    z-index: 8;
+}
+
+
+
+.sleepContainer {
+    z-index: 100;
+}
+
+.zzz {
+    animation-name: zzz;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+    color: rgb(44, 43, 43);
+    font-weight: bold;
+    position: absolute;
+    z-index: 100;
+    transform: translateY(100%);
+
+}
+
+.zzz .zzz-z {
+    animation-delay: 0s;
+    right: 10px;
+}
+
+.zzz .zzz-zz {
+    animation-delay: 0.5s;
+    right: -20px;
+}
+
+.zzz .zzz-zzz {
+    animation-delay: 1s;
+    right: 0;
+}
+
+
+@keyframes Invisible_pulse {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0, 2;
+    }
+
+    20% {
+        opacity: 0, 4;
+    }
+
+    30% {
+        opacity: 0, 6;
+    }
+
+    40% {
+        opacity: 0, 8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0, 8;
+    }
+
+    70% {
+        opacity: 0, 6;
+    }
+
+    80% {
+        opacity: 0, 4;
+    }
+
+    90% {
+        opacity: 0, 2;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes TransitioningBackground {
+    0% {
+        background-position: 1% 0%;
+    }
+
+    50% {
+        background-position: 99% 100%;
+    }
+
+    100% {
+        background-position: 1% 0%;
+    }
+}
+
+
+@keyframes bubble-up {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateX(10px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-10px);
+    }
+
+    100% {
+        bottom: 50%;
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes GradientChange {
+
+    0%,
+    83% {
+        background-color: rgb(221, 11, 46);
+    }
+
+    10% {
+        background-color: rgb(226, 145, 24);
+    }
+
+    22% {
+        background-color: rgb(255, 231, 13);
+    }
+
+    34% {
+        background-color: rgb(79, 168, 6);
+    }
+
+    46% {
+        background-color: rgb(17, 196, 255);
+    }
+
+    58% {
+        background-color: rgb(10, 27, 255);
+    }
+
+    70% {
+        background-color: rgb(90, 6, 168);
+    }
+
+    82% {
+        background-color: rgb(255, 0, 221);
+    }
+
+}
+
+
+@keyframes moveup {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+        box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    }
+
+    70% {
+        -moz-box-shadow: 0 0 0 30px rgba(204, 169, 44, 0);
+        box-shadow: 0 0 0 30px rgba(204, 169, 44, 0);
+    }
+
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes zzz {
+    0% {
+        color: rgba(160, 84, 246, 0);
+        font-size: 30px;
+        transform: translateY(100%);
+    }
+
+    100% {
+        color: rgba(160, 84, 246, 1);
+        font-size: 72px;
+        transform: translateY(-100%);
+    }
+}
