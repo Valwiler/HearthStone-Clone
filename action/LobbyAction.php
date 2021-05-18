@@ -31,7 +31,7 @@
 				}
 			}
 			else{
-				$data['message'] = "Ya rien OSTI ";
+				$data['message'];
 			}
 
 			//header('Location: lobby.php');
@@ -49,15 +49,15 @@
 			
 		}
 		public function play($key){
-			echo "Caca";
-			//$data = [];
-			//$data['key'] = $key;
-			//$data["type"] = "PVP";
-			//$result = parent::callAPI("games/auto-match", $data,"STANDARD" );
-			//if($_success.includes($result)){
-			//	header('Location: game.php');		
-			//	exit;
-			//}
+			
+			$data = [];
+			$data['key'] = $key;
+			$data["type"] = "PVP";
+			$result = parent::callAPI("games/auto-match", $data,"STANDARD" );
+			if($_success.includes($result)){
+				header('Location: game.php');		
+				exit;
+			}
 		}
 		public function Deconnect($key){
 			$data = [];

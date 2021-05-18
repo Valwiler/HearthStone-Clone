@@ -8,9 +8,9 @@
 
 	require_once("partial/header.php");
 ?>
-	<h1>Bienvenu au Lobby osti</h1>
+	<h1>Bienvenu au Lobby </h1>
 
-	<p>Veux-tu jouer une tite game caliss ?</p>
+	<p>Veux-tu jouer une tite game  ?</p>
 	
 	<div class="lobby-form-frame">
 		<form action="lobby.php" method="post">

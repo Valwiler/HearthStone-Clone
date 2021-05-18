@@ -9,9 +9,29 @@
 		}
 
 		protected function executeAction() {
-			
-			var_dump(UserDao::getComments());
+			$_SESSION['currentPage'] = "Blogue";
 
-			return [];
+			
+			
+			if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
+
+				if(isset($_POST['post'])){
+					if(isset($_POST['blogue-text']) && $_POST['blogue-text'] != " "){
+					   UserDao::insertPost($_SESSION["username"], $_POST['blogue-text']);
+					}
+				}
+				elseif (isset($_POST['delete'])){				
+					self::deletePost();
+				}
+				elseif (isset($_POST['reply'])){	
+					self::Deconnect($data['token']);
+				}
+				else{
+					
+				}
+			}
+			$result['comments'] = UserDao::getComments();
+
+			return compact('result');
 		}
 	}

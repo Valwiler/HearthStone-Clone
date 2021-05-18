@@ -166,6 +166,23 @@ a:hover {
     color: rgb(0, 0, 0);
 }
 
+.post-div {
+    display: block;
+    width: 50%;
+    padding: 5px;
+    border-radius: 3px;
+    align-items: left;
+    justify-content: left;
+    text-align: center;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(192, 235, 255);
+    color: rgb(0, 0, 0);
+}
+
+.post-div p {
+    text-align: right;
+}
+
 .login-form-frame {
     margin: 20px auto;
     width: 400px;

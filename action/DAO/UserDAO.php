@@ -8,18 +8,16 @@
 
             $statement = $connection->prepare("SELECT * FROM users WHERE username = ?");
             $statement->bindParam(1, $username);
-            $statement->setFetchMode(PDO::FETCH_ASSOC); // <-- Permet de retourner un dictionnaire, ex: $row["username"], au lieu de $row[1]
+            $statement->setFetchMode(PDO::FETCH_ASSOC); 
             $statement->execute();
 
             $user = null;
 
-            // $tableauDeLignes = $statement->fetchAll();
             if ($row = $statement->fetch()) {
                 if (password_verify($password, $row["password"])) {
-                    $user = $row; // $row["username"], $row["id"]
+                    $user = $row;
                 }
             }
-
             return $user;
         }
 
@@ -27,15 +25,31 @@
             $connection = Connection::getConnection();
         }
         public static function getComments(){
+            
             $connection = Connection::getConnection();
             
             $statement = $connection->prepare("SELECT * FROM Posts");
             $statement->setFetchMode(PDO::FETCH_ASSOC); 
             $statement->execute();
 
-            var_dump($statement->fetchall());
+            $result = $statement->fetchall();
+     
+            
+            return $result ;
         }
 
-        public static function insertPost(){}
+        public static function insertPost($user, $post ){
+            $connection = Connection::getConnection();
+
+            $statement = $connection->prepare("INSERT INTO Posts( Postdate, Username, Comment ) VALUES(NOW() ,? ,?)");
+            $statement->bindParam(1, $user);
+            $statement->bindParam(2, $post);
+            $statement->execute();
+
+        }
+
+        public static function deletePost($user, $post ){
+
+        }
 
     }
